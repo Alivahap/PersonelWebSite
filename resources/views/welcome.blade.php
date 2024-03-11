@@ -5,26 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ana Sayfa</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
 
 @include('partials.header')
 
-<section id="hero" class="bg-light py-5">
+<section id="search" class="bg-light py-4">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <h1 class="display-4">Hoş Geldiniz</h1>
-                <p class="lead">Profesyonel uygulama geliştirme hizmetlerimiz ile işinizi büyütün.</p>
-                <a href="#services" class="btn btn-primary btn-lg">Hizmetlerimiz</a>
-            </div>
-            <div class="col-md-6">
-                <img src="https://via.placeholder.com/500" class="img-fluid" alt="Ana Sayfa Görseli">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <form class="form-inline">
+                    <div class="input-group w-100">
+                        <input type="text" class="form-control border-primary rounded-pill py-3 px-4" placeholder="Ara" aria-label="Search" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary rounded-pill px-4" type="button" id="button-addon2">Ara</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </section>
+
+
+<section id="videos" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Videolar</h2>
+        
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x225" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Video Başlığı 1</h5>
+                        <p class="card-text">Video açıklaması veya kısa bilgi.</p>
+                        <a href="#" class="btn btn-primary">Videoyu İzle</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Diğer videoların kartları -->
+            <div class="col-lg-4 mb-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x225" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Video Başlığı 2</h5>
+                        <p class="card-text">Video açıklaması veya kısa bilgi.</p>
+                        <a href="#" class="btn btn-primary">Videoyu İzle</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Diğer videoların kartları -->
+            <div class="col-lg-4 mb-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x225" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Video Başlığı 2</h5>
+                        <p class="card-text">Video açıklaması veya kısa bilgi.</p>
+                        <a href="#" class="btn btn-primary">Videoyu İzle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x225" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Video Başlığı 1</h5>
+                        <p class="card-text">Video açıklaması veya kısa bilgi.</p>
+                        <a href="#" class="btn btn-primary">Videoyu İzle</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Diğer videoların kartları -->
+            <div class="col-lg-4 mb-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x225" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Video Başlığı 2</h5>
+                        <p class="card-text">Video açıklaması veya kısa bilgi.</p>
+                        <a href="#" class="btn btn-primary">Videoyu İzle</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Diğer videoların kartları -->
+            <div class="col-lg-4 mb-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x225" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Video Başlığı 2</h5>
+                        <p class="card-text">Video açıklaması veya kısa bilgi.</p>
+                        <a href="#" class="btn btn-primary">Videoyu İzle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</section>
+
+
 
 <section id="services" class="bg-light py-5">
     <div class="container">
