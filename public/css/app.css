@@ -1,0 +1,21 @@
+/* style.css */
+header {
+    background-color: #343a40;
+    padding: 20px 0;
+}
+
+header h1 {
+    color: #fff;
+}
+
+.nav-link {
+    color: #fff;
+}
+
+.nav-link:hover {
+    color: #ccc;
+}
+
+.active {
+    color: #ccc !important;
+}
