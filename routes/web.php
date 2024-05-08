@@ -12,14 +12,13 @@ use App\Http\Controllers\PageController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
+*/
 
 Route::get('/test/{ad?}/{soyad?}', function ($ad=null,$soyad=null ) {
-    
-    
     
     return "ad: ".$ad."<br> soyad:".$soyad;
     #return view('test');
@@ -30,10 +29,13 @@ Route::post('/post', function () {
     return view('test');
 });
 
+//Route::get('/', [PageController::class, 'index']);
 
-
-
-Route::get('/page', [PageController::class, 'index']);
+Route::get('/', [PageController::class, 'index'])->name('welcome');
 
 Route::get('/hakkimizda', 'App\Http\Controllers\HakkimizdaController@index')->name('hakkimizda');
 Route::get('/portfolyo', 'App\Http\Controllers\PortfolyoController@index')->name('portfolyo');
+
+
+//Route::get('/cv', 'App\Http\Controllers\CvController@index');
+//Route::post('/generate-cv', 'App\Http\Controllers\CvController@generateCv')->name('generate.cv');

@@ -11,137 +11,52 @@
 <body>
 
 @include('partials.header')
-
-<section id="search" class="bg-light py-4">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <form class="form-inline">
-                    <div class="input-group w-100">
-                        <input type="text" class="form-control border-primary rounded-pill py-3 px-4" placeholder="Ara" aria-label="Search" aria-describedby="button-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary rounded-pill px-4" type="button" id="button-addon2">Ara</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-
-
 <section id="videos" class="py-5">
     <div class="container">
         <h2 class="text-center mb-4">Videolar</h2>
         
         <div class="row">
-            <div class="col-lg-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/400x225" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Video Başlığı 1</h5>
-                        <p class="card-text">Video açıklaması veya kısa bilgi.</p>
-                        <a href="#" class="btn btn-primary">Videoyu İzle</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Diğer videoların kartları -->
-            <div class="col-lg-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/400x225" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Video Başlığı 2</h5>
-                        <p class="card-text">Video açıklaması veya kısa bilgi.</p>
-                        <a href="#" class="btn btn-primary">Videoyu İzle</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Diğer videoların kartları -->
-            <div class="col-lg-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/400x225" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Video Başlığı 2</h5>
-                        <p class="card-text">Video açıklaması veya kısa bilgi.</p>
-                        <a href="#" class="btn btn-primary">Videoyu İzle</a>
-                    </div>
-                </div>
-            </div>
+            @foreach($videos as $index => $video)
+                @if($index % 3 == 0)
         </div>
         <div class="row">
+                @endif
             <div class="col-lg-4 mb-4">
                 <div class="card">
-                    <img src="https://via.placeholder.com/400x225" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Video Başlığı 1</h5>
-                        <p class="card-text">Video açıklaması veya kısa bilgi.</p>
-                        <a href="#" class="btn btn-primary">Videoyu İzle</a>
+                    <div class="card-body">   
+                        <h5 class="card-title">{{ $video->yotube_title  }}</h5>
+                        <div class="embed-responsive embed-responsive-16by9">    
+                            <iframe class="embed-responsive-item" src="{{$video->yotube_link}}" allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- Diğer videoların kartları -->
-            <div class="col-lg-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/400x225" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Video Başlığı 2</h5>
-                        <p class="card-text">Video açıklaması veya kısa bilgi.</p>
-                        <a href="#" class="btn btn-primary">Videoyu İzle</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Diğer videoların kartları -->
-            <div class="col-lg-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/400x225" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Video Başlığı 2</h5>
-                        <p class="card-text">Video açıklaması veya kısa bilgi.</p>
-                        <a href="#" class="btn btn-primary">Videoyu İzle</a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
-
-
-
-
     </div>
 </section>
-
 
 
 <section id="services" class="bg-light py-5">
     <div class="container">
         <h2 class="text-center mb-4">Uygulama Geliştirme Hizmetlerimiz</h2>
         <div class="row">
+        @foreach($services as $index => $service)
+                @if($index % 3 == 0)
+                </div>
+           <div class="row">
+                @endif
+
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
-                    <img class="card-img-top" src="https://via.placeholder.com/300" alt="Web Uygulama Geliştirme">
+                    <img class="card-img-top" width="300" height="200" src="{{ asset($service->service_path) }}" alt="Web Uygulama Geliştirme">
                     <div class="card-body">
-                        <h3 class="card-title">Web Uygulama Geliştirme</h3>
-                        <p class="card-text">Modern ve kullanıcı dostu web uygulamaları geliştiriyoruz.</p>
+                        <h3 class="card-title">{{$service->service_title}}</h3>
+                        <p class="card-text">{{$service->service_description}}</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100">
-                    <img class="card-img-top" src="https://via.placeholder.com/300" alt="Mobil Uygulama Geliştirme">
-                    <div class="card-body">
-                        <h3 class="card-title">Mobil Uygulama Geliştirme</h3>
-                        <p class="card-text">Android ve iOS platformları için mobil uygulamalar geliştiriyoruz.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100">
-                    <img class="card-img-top" src="https://via.placeholder.com/300" alt="E-ticaret Uygulama Geliştirme">
-                    <div class="card-body">
-                        <h3 class="card-title">E-ticaret Uygulama Geliştirme</h3>
-                        <p class="card-text">Online satış için özel e-ticaret platformları geliştiriyoruz.</p>
-                    </div>
-                </div>
-            </div>
+         @endforeach
         </div>
     </div>
 </section>

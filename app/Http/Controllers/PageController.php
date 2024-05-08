@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Video;
+use App\Models\Services;
 class PageController extends Controller
 {
     /**
@@ -13,7 +14,9 @@ class PageController extends Controller
      */
     public function index()
     {
-        echo "Ali Vahap pagecontroller";
+        $videos = Video::all(); 
+        $services = Services::all(); 
+        return view('welcome',compact('videos','services'));
     }
 
     /**
