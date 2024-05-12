@@ -1,7 +1,5 @@
 
 
-
-
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
@@ -16,6 +14,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('hakkimizda') }}">Hakkımızda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('services') }}">Hizmetlerim</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link {{ Request::is('portfolyo') ? 'active' : '' }}" href="{{ route('portfolyo') }} ">Portfolyo</a>

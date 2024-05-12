@@ -33,6 +33,8 @@ Route::post('/post', function () {
 
 Route::get('/', [PageController::class, 'index'])->name('welcome');
 
+Route::get('/services', 'App\Http\Controllers\ServicesController@index')->name('services');
+
 Route::get('/hakkimizda', 'App\Http\Controllers\HakkimizdaController@index')->name('hakkimizda');
 Route::get('/portfolyo', 'App\Http\Controllers\PortfolyoController@index')->name('portfolyo');
 
