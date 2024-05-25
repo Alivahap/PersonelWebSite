@@ -5,15 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ana Sayfa</title>
     
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
 
 @include('partials.header')
+<section class="portfolio">
+    <div class="container">
+        
+        <div id="portfolioCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#portfolioCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#portfolioCarousel" data-slide-to="1"></li>
+                <!-- Diğer portföy öğeleri için slide indicator'leri buraya eklenebilir -->
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{asset('img/slider/1.jpg')}}" width="600" height="400" class="d-block w-100" alt="Proje 1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 style="background-color:DodgerBlue;">PHP Dersleri veriyorum</h5>
+                        <p style="background-color:DodgerBlue;">Ders içeriği PHP, HTML, CSS, Bootstrapt</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{{asset('img/slider/2.jpg')}}" class="d-block w-100" width="600" height="400" alt="Proje 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 style="background-color:DodgerBlue;">Web sitesi geliştiriyorum </h5>
+                        <p style="background-color:DodgerBlue; ">Dernekler, Kişisel Siteler ve E-Ticaret Siteleri gibi web siteleri kodluyorum.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{{asset('img/slider/3.jpg')}}" class="d-block w-100" width="600" height="400" alt="Proje 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 style="background-color:DodgerBlue;">API Oluşturuyorum. </h5>
+                        <p style="background-color:DodgerBlue; ">Yazılımlarınızın performansını arttırma, yazılımızı genişletmek için size özel API'lar kodlayabilirim.</p>
+                    </div>
+                </div>
+                <!-- Diğer portföy öğeleri için carousel item'leri buraya eklenebilir -->
+            </div>
+            <a class="carousel-control-prev" href="#portfolioCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Önceki</span>
+            </a>
+            <a class="carousel-control-next" href="#portfolioCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">İleri</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModalLabel">Proje Detayı</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img id="modalImage" src="" class="img-fluid" alt="Proje Detayı">
+            </div>
+        </div>
+    </div>
+</div>
+
 <section id="videos" class="py-5">
     <div class="container">
-        <h2 class="text-center mb-4">Videolar</h2>
+        <h2 class="text-center mb-4">Videolarım</h2>
         
         <div class="row">
             @foreach($videos as $index => $video)
@@ -60,76 +122,6 @@
         </div>
     </div>
 </section>
-
-<section id="overview" class="py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 mb-4">
-                <h2 class="mb-4">Genel Bakış</h2>
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <div class="text-center">
-                            <i class="fas fa-cogs fa-3x mb-3 text-primary"></i>
-                            <h3>Kapsamlı Çözümler</h3>
-                            <p>Şirketinizin tüm ihtiyaçlarına yönelik kapsamlı ve özelleştirilmiş çözümler sunuyoruz.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <div class="text-center">
-                            <i class="fas fa-code fa-3x mb-3 text-primary"></i>
-                            <h3>Güncel Yazılım Teknolojileri</h3>
-                            <p>En son teknolojileri kullanarak yenilikçi ve güncel çözümler sunuyoruz.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <div class="text-center">
-                            <i class="fas fa-handshake fa-3x mb-3 text-primary"></i>
-                            <h3>Proaktif Yaklaşım</h3>
-                            <p>Sorunları önceden belirleyerek proaktif bir yaklaşımla çözümler sunuyoruz.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <div class="text-center">
-                            <i class="fas fa-headset fa-3x mb-3 text-primary"></i>
-                            <h3>Profesyonel Destek</h3>
-                            <p>Profesyonel ve etkin destek ekibimizle 7/24 hizmetinizdeyiz.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 mb-4">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="https://via.placeholder.com/600x400" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://via.placeholder.com/600x400" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://via.placeholder.com/600x400" class="d-block w-100" alt="...">
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
 
 
 
