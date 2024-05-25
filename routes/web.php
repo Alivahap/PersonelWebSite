@@ -12,32 +12,7 @@ use App\Http\Controllers\PageController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
-*/
-
-Route::get('/test/{ad?}/{soyad?}', function ($ad=null,$soyad=null ) {
-    
-    return "ad: ".$ad."<br> soyad:".$soyad;
-    #return view('test');
-})->where(['ad' => '[a-z]+','soyad' => '[azA-z]+'])->name('test');
-
-
-Route::post('/post', function () {
-    return view('test');
-});
-
-//Route::get('/', [PageController::class, 'index']);
-
 Route::get('/', [PageController::class, 'index'])->name('welcome');
-
 Route::get('/services', 'App\Http\Controllers\ServicesController@index')->name('services');
-
-Route::get('/hakkimizda', 'App\Http\Controllers\HakkimizdaController@index')->name('hakkimizda');
+Route::get('/aboutme', 'App\Http\Controllers\AboutmeController@index')->name('aboutme');
 Route::get('/portfolyo', 'App\Http\Controllers\PortfolyoController@index')->name('portfolyo');
-
-
-//Route::get('/cv', 'App\Http\Controllers\CvController@index');
-//Route::post('/generate-cv', 'App\Http\Controllers\CvController@generateCv')->name('generate.cv');

@@ -1,0 +1,7 @@
+.profile-img-circle {
+    width: 20em;
+    height: 20em;
+    border-radius: 50%;
+    object-fit: cover; 
+}
+
